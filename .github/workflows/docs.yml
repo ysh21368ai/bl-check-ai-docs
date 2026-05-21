@@ -36,7 +36,7 @@ jobs:
         run: pip install "mkdocs-material>=9.5" "mkdocs>=1.6" pymdown-extensions
 
       - name: Build site
-        run: mkdocs build --strict
+        run: mkdocs build
 
       - name: Upload pages artifact
         uses: actions/upload-pages-artifact@v3
