@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# uv
+uv.lock
+
+# 환경변수 / 비밀
+.env
+.env.local
+configs/credential.yaml
+configs/*.key
+configs/*Config.ini
+!configs/*Config.example.ini
+
+# 로그 / 출력
+logs/
+output/
+*.log
+
+# mkdocs build
+site/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# 임시
+*.tmp
+.tmp/
+
+# Miniconda 설치 스크립트
+Miniconda3-latest-Linux-x86_64.sh
+
+# Oracle Instant Client (해당 시)
+instantclient_*/

@@ -1,0 +1,92 @@
+site_name: BL Check (AI) · 운영 가이드
+site_description: 신코르 해운 BL 자동 체크 시스템의 운영 / 코드 / 데이터 모델 문서
+site_url: https://ysh21368ai.github.io/bl-check-ai-docs/
+
+repo_name: bl-check-ai-docs
+repo_url: https://github.com/ysh21368ai/bl-check-ai-docs
+
+docs_dir: docs
+
+nav:
+  - 홈: index.md
+  - 기술 문서:
+      - 아키텍처 개요: tech/architecture.md
+      - 데이터 모델: tech/data-model.md
+      - AI 파이프라인 (BL 1건 처리 흐름): tech/ai-pipeline.md
+      - 룰 정의: tech/rules.md
+      - 배포 / 환경변수: tech/deployment.md
+      - 모듈 레퍼런스:
+          - bl_check_main_multi_pt.py — 메인 오케스트레이션: tech/modules/main.md
+          - database_management/database_handler.py — DB 호출 함수: tech/modules/database-handler.md
+          - oracle_db/oracle_store.py — Oracle 풀 / 프로시저 호출: tech/modules/oracle-store.md
+          - DB 프로시저 (pkg_ai_bl_check): tech/modules/procedures.md
+          - LLM_extractor/ — LLM 체인: tech/modules/llm-extractor.md
+  - 운영:
+      - 일상 운영 매뉴얼: operations/runbook.md
+      - 트러블슈팅: operations/troubleshooting.md
+      - 모니터링: operations/monitoring.md
+  - API 스펙:
+      - 외부 시스템 연동 (설계 중): api/README.md
+
+theme:
+  name: material
+  language: ko
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: blue
+      toggle:
+        icon: material/brightness-7
+        name: 다크 모드
+    - scheme: slate
+      primary: indigo
+      accent: blue
+      toggle:
+        icon: material/brightness-4
+        name: 라이트 모드
+  font:
+    text: Pretendard
+    code: JetBrains Mono
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - tables
+  - footnotes
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+
+plugins:
+  - search:
+      lang:
+        - ko
+        - en
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/ysh21368ai
